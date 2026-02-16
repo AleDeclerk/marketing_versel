@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 interface AutomataResult {
   status: string;
@@ -126,14 +127,14 @@ export default function Home() {
         {/* Navigation bar */}
         <nav className="mb-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            {/* Logo mark */}
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-500/10 ring-1 ring-indigo-500/20">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="text-indigo-400">
-                <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
-                <path d="M2 17l10 5 10-5" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
-                <path d="M2 12l10 5 10-5" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
-              </svg>
-            </div>
+            <Image
+              src="/logo.png"
+              alt="Veritas Automata"
+              width={40}
+              height={40}
+              className="rounded-lg"
+              priority
+            />
             <span className="text-sm font-semibold tracking-tight text-zinc-200">
               Automata Console
             </span>
@@ -325,12 +326,14 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="mt-20 flex items-center justify-center gap-2 text-[11px] text-zinc-500">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="text-zinc-500">
-            <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
-            <path d="M2 17l10 5 10-5" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
-            <path d="M2 12l10 5 10-5" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
-          </svg>
-          <span>Automata Console &middot; Internal Prototype</span>
+          <Image
+            src="/logo.png"
+            alt="Veritas Automata"
+            width={16}
+            height={16}
+            className="rounded-sm opacity-60"
+          />
+          <span>Veritas Automata &middot; Internal Prototype</span>
         </footer>
       </div>
     </div>
